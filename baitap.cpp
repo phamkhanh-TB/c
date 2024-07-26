@@ -2,21 +2,13 @@
 using namespace std;
 int main(){
     int num;cin>>num;
-    vector<int> v;
-    vector<int> prefix(num+1,0);
-    while(num--){
-        int x;
-        cin>>x;
-        v.push_back(x);
+   int S[num+1];int A[num+1];
+    for (int i=1;i<=num;i++){
+        cin>>A[i];
     }
-    int n;cin>>n;
-    while(n--){
-        int l,r;cin>>l>>r;
-        int sum=0;
-        for(int i=l-1;i< r;i++){
-            sum+=v[i];
-        }
-        cout<<sum<<endl;
-        }
-    }
-
+    S[0]=A[0]=0;
+    for (int i=1;i<=num;i++){
+        S[i]=S[i-1]+A[i];}
+    int l,r;cin>>l>>r;
+        cout<<S[r]-S[l-1];
+}
