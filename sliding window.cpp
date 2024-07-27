@@ -12,10 +12,17 @@ int main(){
         for (int i=0;i<k;i++){
             sum+=a[i];
         }
+        long long res=0; long long idx=0;
         for (int i=k;i<n;i++){
             sum=sum -a[i-k]+a[i];
-            cout<<sum<<" ";
+            if (sum>res){
+                res=sum;
+                idx=i-k+1;
+            }
         }
-
+        cout<<res<<endl;
+        for(int i=0;i<k;i++){
+            cout<<a[idx+i]<<" ";
+        }
     }
 }
