@@ -13,7 +13,9 @@ int main(){
             sum+=a[i];
         }
         for (int i=k;i<n;i++){
-            
+            sum=sum -a[i-k]+a[i];
+            cout<<sum<<" ";
         }
+
     }
 }
